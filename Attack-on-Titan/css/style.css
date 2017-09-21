@@ -1,0 +1,188 @@
+.fa{
+    padding: 10px;
+    margin: 
+}
+
+
+
+.roronoa-sazzed{
+    color: white;
+    text-decoration: none;
+}
+
+.roronoa-sazzed:hover{
+    color: white;
+    text-decoration: none;
+}
+.footer-text{
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-text:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
+.names-and-position{
+    color: aqua;
+    font-weight: bold;
+}
+
+.entrance-theme{
+    padding: 20px;
+    visibility: hidden;
+}
+
+
+@media only screen and (max-width: 720px){
+    
+ 
+    
+        .bodyImg {
+        background-image: url(../images/background-360-2.png);
+        }
+    .left-pic{
+        position: absolute;
+        visibility: hidden;
+        z-index: -1;
+    }
+     .right-pic{
+        position: absolute;
+        visibility: hidden;
+        z-index: -1;
+    }
+    
+}
+// For Width less than 720 footer texts style
+
+
+.footer-text{
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+.footer-text:hover{
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 0 30px aqua;
+}
+.p1{
+    margin-bottom: 30px;
+}
+.p1:hover{
+    box-shadow: 0 0 100px #FF0066;
+    background-color: transparent;
+}
+
+
+
+
+
+
+.all-cadets-colour:hover{
+    color: white;
+}
+
+.underline:hover{
+    text-decoration: none;
+}
+
+
+
+.thumbnail{
+    background-color: transparent;
+}
+
+.thumbnail:hover{
+    background-color: transparent;
+    box-shadow: 0 0 250px  #ff0000;
+    
+}
+
+
+
+
+.wings-of-freedom{
+    width: 250px;
+    margin-top: 20px;
+}
+
+
+.Attackontitan{
+    font-weight: bolder;
+    font-family: Trade Winds;
+    font-size: 30px;
+    margin-left: 35px;
+    margin-top: 35px;
+    color: white;
+}
+
+.margin-top{
+    margin-top: -25px;
+    margin-right: 35px;
+}
+
+.white{
+    font-family:  Trade Winds;
+    color: white;
+    background-color: transparent;
+}
+.white:hover{
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+
+}
+.h1{
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+}
+.p1{
+    font-weight: bolder;
+    color: white;
+    font-size: 21px;
+}
+
+
+.A-place-where-cadet-becomes-family{
+    margin-top: 400px;
+    font-size: 35px;
+    color: #ff0066;
+}
+
+
+.MORSA{
+    background-color: transparent;
+    margin-top: 30px;
+    color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+.MORSA:hover{
+    border: 1px solid  #ff0000;
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 40px #ff0000;
+}
+
+body{
+    background-image: url(../images/cover-pic.png);
+    //background-repeat: no-repeat;
+    font-family: Trade Winds;
+    
+    
+}
+.thumbnail {
+  border: 0;
+  background: transparent;
+}

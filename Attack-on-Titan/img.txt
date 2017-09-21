@@ -1,0 +1,12 @@
+        <ul class="list-unstyled list-inline text-center center-block all-cadets">
+            <li><button class="HALHC"><a href="https://www.facebook.com/KIRARIN.GALANG" target="_blank"><img src="images/ally-galang.png" alt="Section Commander Hange"> </a></button></li>
+            
+            <li><button class="HALHC"><a href="" target="_blank"><img src="images/annie-leonhardt-t1.png" alt="Cadet Annie (Timeline 1)"> </a></button></li>
+             
+            <li><button class="HALHC"><a href="" target="_blank"><img src="images/levi-t1.png" alt="Captain Levi (Timeline 1)"> </a></button></li>
+             
+            <li><button class="HALHC"><a href="" target="_blank"><img src="images/historia.png" alt="Cadet Historia (Timeline 1)"> </a></button></li>
+
+            <li><button class="HALHC"><a href="" target="_blank"><img src="images/connie.png" alt="Cadet Connie"> </a></button></li>
+             
+         </ul>
