@@ -1,0 +1,454 @@
+/* media query for responsiveness
+@media (max-width: 767px) {}
+@media (min-width: 768px) {}
+@media (min-width: 1200px) {}
+font-family: 'Playfair Display', serif; (Main title)
+font-family: 'Chicle', cursive;  (Menu)
+font-family: 'Rancho', cursive; (Menu Alt)
+font-family: 'Satisfy', cursive; (testimonial name)
+font-family: 'Courgette', cursive; (testimonial name)
+font-family: 'Merriweather', serif; (paragraph)
+font-family: 'Oswald', sans-serif; (header)
+*/
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: #f99d1c;
+}
+
+::selection {
+    color: white;
+    background: #f99d1c;
+}
+
+
+.fontSize {
+    font-size: 36px;
+    color: #a51012;
+    -webkit-transition: -webkit-transform 300ms;
+    transition: -webkit-transform 300ms;
+    transition: transform 300ms;
+    transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.fontSize:hover {
+    color: #f99d1c;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+.active {
+    -webkit-transform: scale(2) !important;
+    transform: scale(2) !important;
+    font-size: 36px;
+    margin-bottom: 5%;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald', sans-serif;
+    color: #f99d1c;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 45px;
+    margin-top: 0.67em;
+    margin-bottom: .67em;
+}
+
+h2 {
+    font-size: 35px;
+    margin-top: 0em;
+    margin-bottom: 1.1em;
+}
+
+h3 {
+    font-size: 25px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: 17px;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+}
+
+h5 {
+    font-size: 12px;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+}
+
+h6 {
+    font-size: 11px;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+}
+
+p {
+    font-family: 'Merriweather', serif;
+    line-height: 2;
+    font-size: 14px;
+    color: #747474;
+}
+
+.divOne,
+.divTwo,
+.divThree,
+.divFour,
+.divFive,
+.divSix,
+.divSeven,
+.divEight,
+.footerDiv,
+.signUpDiv {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #a51012;
+}
+
+.navbar-default .navbar-toggle {
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    margin-top: 15px;
+    background-color: #f99d1c;
+    border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #f99d1c;
+}
+
+.navbar-default {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-bottom-color: transparent;
+}
+
+.navbar-default .navbar-nav li a {
+    font-family: 'Rancho', cursive;
+    text-transform: capitalize;
+    text-shadow: none;
+    font-size: 30px;
+    color: #a51012;
+    margin-top: 10px;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #f99d1c;
+}
+
+
+
+
+.divOne {
+    background-image: url(../images/s1.jpg);
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+}
+
+.mainHeader {
+    font-family: 'Satisfy', cursive;
+    font-size: 60px;
+    text-transform: capitalize;
+    color: #f99d1c;
+
+}
+
+.subHeader {
+    font-size: 45px;
+    color: white;
+}
+
+.btnChef {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    text-shadow: none;
+    background-color: #f99d1c;
+    color: black;
+    padding: 10px 25px;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    border-radius: 25px;
+    text-transform: capitalize;
+}
+
+.btnChef:hover {
+    background-color: #a51012;
+    color: white;
+}
+
+.divTwo {
+    min-height: 0px;
+    background-color: #A31719;
+}
+
+.videoResponsive {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.videoResponsive iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.columnDesign {
+    padding: 25px 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.divThree {
+    min-height: 0px;
+    background-image: url(../images/bg-pattern.png);
+    background-attachment: fixed;
+}
+
+.divThree .container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+}
+
+.divThree .economyFeature {
+    margin-top: 50px;
+}
+
+.divThree .economyFeature span {
+    margin: 50px 50px;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    border: 2px solid #a51012;
+    box-shadow: 0px 2px 5px #a51012;
+    cursor: pointer;
+}
+
+.divFour {
+    padding: 0px;
+    background-color: #f99d1c;
+}
+
+.divFive {
+    min-height: 450px;
+    background-image: url(../images/s3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.divFive .columnDesign {
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    border: 1px solid transparent;
+}
+
+.divFive .columnDesign:hover {
+    background-color: rgba(255, 255, 255, .5);
+    box-shadow: 0px 2px 5px black;
+    color: white;
+}
+
+.divFive .columnDesign p {
+    color: black;
+}
+
+.divSix {
+    min-height: 0px;
+    background-image: url(../images/bg-pattern-2.jpg);
+    background-attachment: fixed;
+}
+
+.divSix .columnDesign {
+    background-color: #ecf0f1;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    box-shadow: 0px 2px 2px grey;
+}
+
+.divSix .fa-check-circle {
+    color: #16a085;
+}
+
+.divSix .fa-times-circle {
+    color: #a51012;
+}
+
+
+.priceHeader {
+    background-color: #a51012;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    margin-bottom: 10px;
+}
+
+
+.divSeven {
+    min-height: 0px;
+    background-color: #a51012;
+}
+
+#register {
+    font-size: 30px;
+    width: 100%;
+    border-radius: 0px;
+}
+
+#register:hover {
+    background-color: rgba(249, 157, 28, .7);
+    border-radius: 30px;
+}
+
+.divEight {
+    min-height: 0px;
+    background-color: rgba(249, 157, 28, .5);
+    text-transform: capitalize;
+}
+
+.divEight h2,
+h4 {
+    color: black;
+}
+
+.divEight p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.divEight .columnDesign {
+    background-color: white;
+}
+
+label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    color: #a51012;
+    text-shadow: none;
+}
+
+.emailForm input,
+.emailForm textarea {
+    border-radius: 0px;
+    border-color: #f99d1c;
+}
+
+.footerDiv {
+    min-height: 0px;
+    background-color: #303233;
+}
+
+.footerDiv a {
+    margin: 0px 5px;
+    background-color: #404040;
+    color: #212221;
+    border-radius: 6px;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    padding: 15px 15px 7px 15px;
+}
+
+.footerDiv a:hover {
+    background-color: #212221;
+    color: #404040;
+}
+
+.copyrightDiv {
+    min-height: 0px;
+    padding: 10px 0px;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    background-color: #262726;
+    color: #bdc3c7;
+}
+
+
+/* sign up page css */
+
+.signUpDiv {
+    background-image: url(../images/s1.jpg);
+    min-height: 100vh;
+    text-transform: capitalize;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.signUpDiv .columnDesign {
+    background-color: #a51012;
+    opacity: .9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+}
+
+.signUpDiv label {
+    color: #f99d1c;
+}
+
+.signUpDiv input {
+    border-radius: 20px;
+}
+
+#signUpBtn {
+    background-color: rgba(249, 157, 28, .7);
+}
+
+/* sign up page css */
+
+@media (max-width: 767px) {
+    .btnChef {
+        font-size: 14px;
+        padding: 5px 15px;
+    }
+
+    .mainHeader {
+        font-size: 30px;
+    }
+
+    .subHeader {
+        font-size: 20px;
+    }
+
+    .fontSize {
+        font-size: 25px;
+    }
+
+    .active {
+        font-size: 25px;
+    }
+
+    .divThree .economyFeature span {
+        margin: 5px 5px;
+        padding: 10px;
+    }
+
+}
