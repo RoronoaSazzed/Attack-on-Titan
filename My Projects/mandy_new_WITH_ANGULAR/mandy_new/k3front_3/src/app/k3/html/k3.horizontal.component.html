@@ -1,0 +1,79 @@
+<div class="row k3-horizontal">
+  <div class="col-md-12">
+    <div class="mainbox" id="klagereife">
+                <div class="box-header kitaklage pfeil">
+                    <h3>{{title}}</h3>
+                    <span>{{subTitle}}</span>
+                </div>
+                <div class="row" [hidden]="formBranchControlService.isBranching()">
+                  <div class="col-xs-12 text-center questions">
+                  <p *ngFor="let group of showgroups;let i = index"
+                      [class.hidden]="current!=i" [class.current]="current == i" class="question current">{{group.finalLabel}}
+                  </p>
+                  </div>
+                </div>
+                <div class="row flexcontainer form">
+                    <div class="col-xs-2 text-center flex-middle">
+                        <a href="#" [hidden]="current==0 && ! formBranchControlService.isBranching() || formState > 0">
+                            <i class="fa fa-arrow-circle-left prev" (click) ="prev()"></i>
+                        </a>
+                    </div>
+                    <div class="col-xs-8 flex-middle text-center">
+                        <form (ngSubmit)="onSubmit()" onsubmit="return false;" [formGroup]="form" action={{this.formaction}} method="post">
+                          <!-- <div class="answer"
+
+                               [class.current] ="i==current"
+                               [class.hidden]="i!=current || formBranchControlService.isBranching()" > -->
+                            <!-- <div class="answer" [class.current] ="i==current" [hidden]="i!=current"> -->
+                              <!-- <app-datafield [datafield]="question" [form]="form" [nolabel]="true" (onAction)="onAction($event)" ></app-datafield> -->
+                            <!-- <app-formgroup [form]="form" [datafields]="keys2fields" [datafieldgroup]="group" [nolabels]="true" [parentRealGroups]="realGroups" (onAction)="onAction($event)"></app-formgroup> -->
+                            <app-formgroup
+                                         *ngFor="let group of showgroups; let i = index"
+                                          [class.current] ="i==current"
+                                          [class.hidden]="i!=current || formBranchControlService.isBranching() "
+                                           [current]="current"
+                                           [formState]="formState"
+                                           [form]="form"
+                                           [groupNumber]='i'
+                                           [noLabels]='true'
+                                           [accordionId]="horst"
+                                           [datafields]="keys2fields"
+                                           [style]="''"
+                                           [formNumber]="formNumber"
+                                          [datafieldgroup]="group"
+                                          [openGroup]="openGroups"
+                                          class="answer"
+                                          [parentRealGroups]="realGroups"
+                                          (onAction)="onAction($event)">
+                            </app-formgroup>
+                            <!-- </div> -->
+                          <!-- </div> -->
+
+                          <!-- <app-dynamic-form-branch [hidden]="!formBranchControlService.isBranching()" [formBranchControlService]="formBranchControlService"></app-dynamic-form-branch> -->
+
+                            <!-- <div class="answer a5 current">
+                                <button type="button" class="btn btn-primary">Jetzt kostenlos prüfen.</button>
+                            </div> -->
+                        </form>
+                    </div>
+                    <div class="col-xs-2 text-center flex-middle">
+                        <a href="#" [hidden]="current >= realGroups.length-1 || formBranchControlService.isBranching() || !realGroups[current].isValid || showHidden || formState > 0">
+                            <i class="fa fa-arrow-circle-right next" aria-hidden="true" (click)='next()'></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="timeline center-block">
+                          <li *ngFor="let item of showgroups;let i= index"
+                            [class.hidden]='item.hidden || showHidden && i > showCurrent'
+                            [class.active]="i == current">{{showGroupNumbers[i] + 1}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+  </div>
+  <div *ngIf="payLoad" class="form-row payloadcontent">
+    <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</div>

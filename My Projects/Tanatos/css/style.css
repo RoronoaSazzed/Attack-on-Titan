@@ -1,0 +1,997 @@
+
+/* header wrapper part starts  */
+
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* header wrapper background image part starts  */
+.header_wrapper {
+    background-image: url(../images/background_image1.PNG);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+
+}
+/* header wrapper background image part ends  */
+
+
+/* header wrapper logo part starts */
+
+
+#col , #col1 {
+    float: right;
+    color:#D1D4DB;
+    margin-top: -18px;
+}
+
+#col:hover , #col:active , #col:visited , #col:focus{
+    text-decoration: none;
+}
+
+.logo{
+    margin-top: 10px;
+    width: 130px;
+}
+
+/* header wrapper logo part ends */
+
+
+/* header wrapper navbar part starts */
+.nav li {
+
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0 , 0.4);
+    border-radius: 3px;
+    background-color: #494F56;
+    transition: all .45s ease-in-out;
+    margin-left:3px;
+}
+
+
+.nav li:hover {
+    transform:translate(0px, -13px);
+    border-bottom:2px solid #F5600F;
+    box-shadow: 2px 8px 5px px rgbargb(245,96,15, .5);
+    background-color:transparent;
+
+}
+
+
+.nav > li > a {
+
+    color:#9d9d9d;;
+    font-size: 15px;
+    text-shadow: 0px 0px 7px  #F5600F;
+
+    font-weight: bold;
+
+}
+
+
+.nav > li > a:hover{
+    background-color:transparent;
+    border-bottom: 2px solid #AA9343;
+    color:#F5600F;
+    border-bottom:2px solid #F5600F;
+
+
+}
+
+.nav > li > a:focus , .nav > li > a:active {
+    background-color:transparent;
+    border: none;
+    color:black;
+}
+
+
+.header_wrapper>div>div {
+    margin-top: 50px;
+
+
+}
+
+
+#button , #button1 {
+    margin-top: 30px;
+    margin-left: 67px;
+}
+/* header wrapper navbar part ends */
+
+
+/* header wrapper text part starts */
+.header_wrapper h1 {
+    color:#FFFFFF;
+    font-weight: bold;
+    font-size: 47px;
+    padding-top: 32px;
+    margin-bottom:  15px;
+    position:static;
+
+
+}
+
+.header_wrapper h1>span {
+    color:#F5600F;
+
+
+
+}
+
+.header_wrapper p {
+    color:#D3DFED;
+    width: 45%;    
+    font-size: 17px;
+    margin-bottom: 37px;
+
+
+}
+/* header wrapper text part ends */
+
+
+
+
+/* header wrapper button part stats */
+.bbtn>ul>li{
+    background-color:#F5600F;
+    border: 1px solid #F5600F;
+}
+
+.bbtn>ul>li:hover ,.bbtn>ul>li:active , .bbtn>ul>li:visited , .bbtn>ul>li:focus   {
+    background-color:#E14F00;
+    border:1px solid #FF944D;
+
+}
+
+.bbtn>ul>li a{
+    color: white;
+
+}
+
+.bbtn>ul>li a:hover , .bbtn>ul>li a:active , .bbtn>ul>li a:visited , .bbtn>ul>li a:focus {
+    color: white;
+    text-decoration: none;
+
+
+}
+
+
+.bbtn>ul>li+li  {
+    background-color:transparent;
+
+
+}
+
+.bbtn>ul>li+li:hover , .bbtn>ul>li+li:focus , .bbtn>ul>li+li:active , .bbtn>ul>li+li:visited   {
+    background-color:#363C44;
+}
+
+.bbtn1 a {
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 11px;
+}
+
+.bbtn2 a{
+    font-size: 11px;
+}
+
+.bbtn2 {
+    padding:6px 25px;
+    margin-left:10px;
+    border:1px solid white !important;
+}
+
+.bbtn1 {
+    margin-right: 10px;
+}
+/* header wrapper button part ends */
+
+
+
+/* header wrapper spinner part starts */
+.spin111 {
+
+    -webkit-transition: -webkit-transform .4s ease-in-out;
+    transition:         transform .4s ease-in-out;
+    transition: transform .4s ease-in-out;
+    margin-bottom: 35px;
+    margin-top: 60px;
+    width: 22px;
+
+}
+
+.spin111:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+
+/* header wrapper spinner part ends */
+/* header wrapper part ends  */
+
+
+
+
+/* gol wrapper part starts  */
+.gol_wrapper img {
+    width: 97px;
+}
+
+.gol_wrapper > div > div {
+    margin-top: 70px;
+    margin-bottom:50px;
+}
+
+.gol_wrapper > div > div > div {
+    transition: all .8s ease-in-out;
+}
+
+
+.gol_wrapper > div > div > div:hover {
+    transform: scale(1.1);
+    color: #333333;
+}
+.gol_wrapper h1 {
+    font-size: 14px;
+    color: #707070;
+    font-weight: 700;
+    padding-top: 12px;
+}
+
+.gol_wrapper h1:hover {
+
+
+
+}
+.gol_wrapper p {
+    font-size: 12px;
+    font-weight: 600;
+    padding-top: 8px;
+    color: #777777;
+}
+
+
+.gol_wrapper p:hover {
+
+
+
+}
+
+/* gol wrapper part ends  */
+
+
+/* subscribe wrapper part starts  */
+
+.subscribe_wrapper {
+    background-image: url(../images/background_image2.PNG);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+
+
+.subscribe_wrapper button {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 13px;
+    background-color:#F5600F;
+    border: 1px solid #F5600F;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 70px;
+}
+
+
+.subscribe_wrapper button:hover , .subscribe_wrapper button:active , .subscribe_wrapper button:visited , .subscribe_wrapper button:focus ,  .subscribe_wrapper button:target  {
+    background-color:#E14F00;
+    color: white;
+    border:1px solid #FF944D;
+    border-radius: 8px;
+
+}
+
+
+.subscribe_wrapper form {
+    margin-top: 70px;
+
+}
+
+
+.subscribe_wrapper input {
+    padding-left:30px;
+    font-weight: lighter;
+    font-size: 13px;
+}
+
+
+/* subscribe wrapper part ends  */
+
+
+
+/* kaj wrapper part starts  */
+.kaj_wrapper h1 , .team1 h1 {
+    font-size: 25px;
+    margin-top: 60px;
+    font-weight: 700;
+
+
+
+}
+.kaj_wrapper h1> span , .team1 h1> span {
+    color: #F5600F;
+
+}
+
+
+.kaj_wrapper p , .team1 p {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #6C6963;
+    margin-bottom: 60px;
+}
+
+
+
+.kaj_wrapper> div>div >div+div>div {
+    margin-bottom: 25px;
+
+
+
+}
+
+
+.kaj_wrapper> div>div >div+div+div {
+    margin-bottom: 35px;
+
+}
+
+
+.kaj_wrapper button {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    font-size: 13px;
+    background-color:transparent;
+    border:1px solid #d8d9db;
+    border-radius: 8px;
+    color: #4f555d;
+    margin-bottom: 40px;
+}
+
+
+.kaj_wrapper button:hover , .kaj_wrapper button:active , .kaj_wrapper button:visited , .kaj_wrapper button:focus ,  .kaj_wrapper button:target  {
+    background-color:#363C44;
+    color: white;
+    border:1px solid #363C44;
+    border-radius: 8px;
+
+}
+
+
+.choto img {
+    transition: all .7s ease-in-out;
+}
+
+.choto img:hover {
+    transform: scale(.92);
+}
+
+.boro img {
+    transition: all .7s ease-in-out;
+}
+
+.boro img:hover {
+    transform: scale(1.08);
+}
+
+
+
+
+
+/* kaj wrapper part ends  */
+
+
+
+
+
+
+/* review wrapper part starts  */
+.review_wrapper {
+    background-image: url(../images/review_background.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.review_wrapper img {
+    width: 91px;
+    margin-top:60px;
+    margin-bottom: 19px;
+}
+
+.review_wrapper p{
+    color: #D9D9D9;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.review_wrapper p+p{
+    color: #D9D9D9;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top:19px;
+    margin-bottom: 60px;
+}
+
+/* review wrapper part ends  */
+
+
+
+/* team wrapper part ends  */
+.team_member {
+    height: 400px;
+}
+
+.team_member h1 {
+    font-size: 17px;
+
+    font-weight: 600;
+
+}
+
+
+
+.team_member p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #6C6963;
+    margin-bottom: 60px;
+    padding-top: 5px;
+}
+
+.icon_marg {
+    margin-left:6px;
+    margin-right: 6px;
+}
+
+
+
+.i_facebook {
+    color: #205B9F;
+}
+
+.i_twitter {
+    color: #00ACE3;
+
+}
+
+.i_googleplus {
+    color: #FF3921;
+}
+
+.employee1 , .employee2 , .employee3 , .employee4  {
+    opacity: .7;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+}
+
+
+.employee1:hover , .employee2:hover , .employee3:hover , .employee4:hover {
+    opacity: 1; 
+}
+
+.employee1 img , .employee2  img , .employee3 img , .employee4 img  {
+
+    margin-bottom: 20px;
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+
+.employee1 img:hover , .employee2 img:hover , .employee3 img:hover , .employee4 img:hover {
+    transform: translate(0 , -10px)  scale(1.2);
+    border-bottom: 6px solid #F7600F;
+    border-radius: 6px;
+
+}
+
+
+
+/* team wrapper part ends  */
+
+
+/* hello wrapper part starts  */
+
+
+.hello_wrapper {
+    background-image: url(../images/last_background.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 450px;
+
+}
+
+.hello_wrapper h1  {
+    font-size: 25px;
+    margin-top: 60px;
+    font-weight: 700;
+    color: #FFFFFF;
+
+
+
+}
+.hello_wrapper h1> span  {
+    color: #F5600F;
+
+}
+
+
+.hello_wrapper p  {
+    font-size: 15px;
+
+    font-weight: 300;
+
+    color: #FFFFFF;
+    margin-bottom: 45px;
+}
+
+/* hello wrapper FORM part starts  */
+
+.hello_wrapper button {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 13px;
+    background-color: #F5600F;
+    border: 1px solid #F5600F;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+
+.hello_wrapper button:hover , .hello_wrapper button:active , .hello_wrapper button:visited , .hello_wrapper button:focus ,  .hello_wrapper button:target  {
+    background-color:#E14F00;
+    color: white;
+    border:1px solid #FF944D;
+    border-radius: 8px;
+
+}
+
+
+.hello_wrapper form {
+
+
+}
+
+
+.hello_wrapper input    {
+    padding-left:15px;
+    font-weight: lighter;
+    font-size: 13px;
+    border-radius: 8px;
+}
+
+.hello_wrapper textarea {
+    padding-left:15px;
+    font-weight: lighter;
+    font-size: 13px;
+    margin-top:14px;
+    border-radius: 8px;
+}
+
+
+
+
+/* hello wrapper FORM part ends  */
+
+
+/* hello wrapper icon part starts  */
+.i_facebook2 {
+    color:#205B9F;
+
+
+}
+
+
+.i_googleplus2{
+    color: #FF3921;
+}
+
+.i_twitter2 {
+    color:#00ACE3;
+    margin-left:15px;
+    margin-right: 15px;
+
+
+
+}
+
+
+.hello_icon_row i{
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+
+.hello_icon_row i:hover {
+    transform:  scale(1.4);
+}
+
+
+/* hello wrapper icon part ends  */
+
+
+.hello_icon_row {
+    margin-top:15px;
+}
+
+
+
+
+/* hello wrapper part ends  */
+
+
+
+
+/* footer wrapper part starts  */
+.footer_wrapper {
+    background-color: #3b434c;
+    color:#d9dadb;
+    font-size: 13px;
+}
+
+.footer_wrapper a {
+
+    color:white;;
+}
+
+.footer_wrapper a:hover {
+
+    text-decoration: none;
+    color:red;
+}
+
+.footer_wrapper p {
+    padding-top:28px;
+    padding-bottom: 22px;
+}
+
+
+
+/* footer wrapper part ends  */
+
+
+
+
+
+/*scroll top invisible button css part starts */
+.scrollToTop {
+    background: whiteSmoke;
+    padding: 10px;
+    text-decoration: none;
+    position: fixed;
+    bottom: 100px;
+    right: 200px;
+    display: none;
+}
+
+
+.iconn {
+    color: black;
+}
+
+/*scroll top invisible button css part ends */
+
+
+
+
+
+
+
+/* media query part starts  */
+@media only screen and (max-width: 767px) {
+
+    /* header wrapper media query part starts  */
+
+    /* header wrapper navbar media query part starts  */
+    .header_wrapper p {
+        width: 90%;
+        font-size: 14px;
+        margin-bottom: 37px;
+    }
+    .header_wrapper h1 {
+
+        font-size: 35px;
+
+    }
+
+
+    .spin111 {
+
+        margin-bottom: 25px;
+        margin-top: 30px;
+
+    }
+
+
+
+
+    #button1 {
+
+        margin-left: 25px;
+    }
+    /* header wrapper navbar media query part ends  */
+
+    /* header wrapper button media query part starts  */
+
+
+    .bbtn2 {
+
+        margin-left:4px;
+
+    }
+
+    .bbtn1 {
+        margin-right: 4px;
+    }
+    /* header wrapper button media query part ends  */
+    /* header wrapper media query part ends  */
+
+
+
+    /* gol wrapper media query part starts  */
+
+    .gol_wrapper > div > div {
+        margin-top: 55px;
+        margin-bottom:45px;
+    }
+
+
+    .gol_wrapper > div > div>div+div {
+        margin-top: 7px;
+
+    }
+
+    .gol_wrapper > div > div>div+div+div {
+        margin-top: 7px;
+
+    }
+
+    .gol_wrapper > div > div>div+div+div+div {
+        margin-top: 7px;
+
+    }
+
+    /* gol wrapper media query part ends  */
+
+
+    /* subscribe wrapper media query  part starts  */
+    
+    .subscribe_wrapper button {
+        margin-top:15px;
+        margin-bottom: 50px;
+    }
+
+
+    .subscribe_wrapper form {
+        margin-top: 50px;
+
+    }
+
+    /* subscribe wrapper media query  part ends  */
+
+
+    /* team wrapper media query  part starts  */
+    .employee2  img , .employee3 img , .employee4 img  {
+
+        padding-top:0px;
+
+    }
+
+    /* team wrapper media query  part ends  */
+
+    /* hello wrapper media query  part starts  */
+    .hello_subject_row {
+        margin-top: 15px;
+    }
+
+
+    /* hello wrapper media query  part ends  */
+
+
+
+
+    /* footer wrapper media query  part starts  */
+    .footer_wrapper p {
+        padding-bottom: 0px;
+        padding-top:0px;
+    }
+
+
+    .footer_p1 {
+        padding-top: 20px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    .footer_p2 {
+        padding-top:0px;
+        margin-top: -5px;
+        padding-bottom:20px;
+    }
+
+
+    /* footer wrapper media query  part ends  */
+
+
+    /*scroll top invisible button css media query part starts */
+    .scrollToTop {
+        background: whiteSmoke;
+        padding: 10px;
+        text-decoration: none;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        display: none;
+    }
+
+
+    .iconn {
+        color: black;
+    }
+
+    /*scroll top invisible button css media query part ends */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+@media only screen and (min-width:768px)  and (max-width: 1300px) {
+
+
+    /*scroll top invisible button css media query part starts */
+    .scrollToTop {
+        background: whiteSmoke;
+        padding: 10px;
+        text-decoration: none;
+        position: fixed;
+        bottom: 65px;
+        right: 80px;
+        display: none;
+    }
+
+
+    .iconn {
+        color: black;
+    }
+
+    /*scroll top invisible button css media query part ends */
+
+
+}
+
+
+@media only screen and (min-width:1301px)  and (max-width: 1600px) {
+    /*scroll top invisible button css media query part starts */
+    .scrollToTop {
+        background: whiteSmoke;
+        padding: 10px;
+        text-decoration: none;
+        position: fixed;
+        bottom: 65px;
+        right: 105px;
+        display: none;
+    }
+
+
+    .iconn {
+        color: black;
+    }
+    /*scroll top invisible button css media query part ends */
+
+
+
+}
+
+
+@media only screen and (min-width:1601px)  and (max-width: 1800px) {
+    /*scroll top invisible button css media query part starts */
+    .scrollToTop {
+        background: whiteSmoke;
+        padding: 10px;
+        text-decoration: none;
+        position: fixed;
+        bottom: 65px;
+        right: 200px;
+        display: none;
+    }
+
+
+    .iconn {
+        color: black;
+    }
+    /*scroll top invisible button css media query part ends */
+
+
+
+}
+
+
+@media only screen and (min-width:1801px)  and (max-width: 1849px) {
+    /*scroll top invisible button css media query part starts */
+    .scrollToTop {
+        background: whiteSmoke;
+        padding: 10px;
+        text-decoration: none;
+        position: fixed;
+        bottom: 65px;
+        right: 320px;
+        display: none;
+    }
+
+
+    .iconn {
+        color: black;
+    }
+    /*scroll top invisible button css media query part ends */
+
+
+
+}
+
+
+
+@media only screen and (min-width:1850px)  {
+    /*scroll top invisible button css media query part starts */
+    .scrollToTop {
+        visibility: hidden;
+    }
+
+
+    .iconn {
+        color: black;
+    }
+    /*scroll top invisible button css media query part ends */
+
+
+
+}
+
+
+
+
+
+
+/* media query part ends  */

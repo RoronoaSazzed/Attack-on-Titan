@@ -1,0 +1,608 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>K3front</title>
+  <base href="/">
+
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap-datepicker3.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <script src="https://use.fontawesome.com/754adea299.js"></script>
+  <script type="text/javascript" src="assets/jquery.js"></script>
+  <script type="text/javascript" src="assets/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript" src="assets/bootstrap-datepicker.de.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body class="forms">
+  <div class="mytestapp">
+    hier ist nur ein Text qwertz
+  </div>
+  <noscript id="ng-main-content">
+    <k3vertical>Bambus</k3vertical>
+  </noscript>
+  <div class="main" id="main">
+  <div class="container" id="container">
+  <div class="row">
+                           <div class="col-md-12">
+                               <script>
+                               var temp = {
+                      "title": "Ihr Weg zum Kitaplatz",
+                      "bodyCss": "",
+                      "checkUrl": "\/",
+                      "formCount": 1,
+                      "subTitle": "Ihr Weg zum Kitaplatz",
+                      "formState": 0,
+                      "class": "",
+                      "type": "h",
+                      "fields": [{
+                          "ctlType": "date",
+                          "key": "date_care_start",
+                          "label": "Betreuungsbeginn",
+                          "required": true,
+                          "rules": [{
+                              "type": "beforeDate",
+                              "offset": 99
+                          }, {
+                              "type": "afterDate",
+                              "offset": -1
+                          }],
+                          "tooltip": "",
+                          "group": 0,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "minDate": "NOW",
+                              "additionMin": 0,
+                              "maxDate": "NOW",
+                              "additionMax": 98
+                          }
+                      }, {
+                          "ctlType": "button",
+                          "key": "button_over_14_weeks",
+                          "label": "Erinnern: sp\u00e4terer Betreuungsbeginn",
+                          "required": false,
+                          "rules": false,
+                          "tooltip": "",
+                          "group": 0,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "action": "nexthidden_1"
+                          }
+                      }, {
+                          "ctlType": "date",
+                          "key": "date_care_start_real",
+                          "label": "Das von Ihnen gew\u00fcnschte Betreuungsbeginndatum Ihres Kindes",
+                          "required": false,
+                          "rules": [{
+                              "type": "afterDate",
+                              "offset": 97
+                          }],
+                          "tooltip": "",
+                          "group": 1,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false,
+                          "options": {
+                              "minDate": "NOW",
+                              "additionMin": 98,
+                              "maxDate": "NONE",
+                              "additionMax": 0
+                          }
+                      }, {
+                          "ctlType": "textbox",
+                          "key": "email",
+                          "label": "Ihre E-Mail-Adresse",
+                          "required": true,
+                          "rules": [{
+                              "type": "email"
+                          }],
+                          "tooltip": "",
+                          "group": 1,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false
+                      }, {
+                          "ctlType": "textbox",
+                          "key": "email_confirm",
+                          "label": "Ihre E-Mail-Adresse Best\u00e4tigung",
+                          "required": true,
+                          "rules": [{
+                              "type": "confirm",
+                              "otherField": "email"
+                          }],
+                          "tooltip": "",
+                          "group": 1,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false
+                      }, {
+                          "ctlType": "checkbox",
+                          "key": "accepted_tos",
+                          "label": "AGB akzeptiert",
+                          "required": true,
+                          "rules": [{
+                              "type": "requiredTrue"
+                          }],
+                          "tooltip": "",
+                          "group": 1,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": true,
+                          "boxLabel": "<p><a target=\"_blank\"  href=\"\/de\/agb\"><strong>AGB<\/strong><\/a> gelesen und akzeptiert<\/p>\n"
+                      }, {
+                          "ctlType": "checkbox",
+                          "key": "accepted_privacy",
+                          "label": "Datenschutz akzeptiert",
+                          "required": true,
+                          "rules": [{
+                              "type": "requiredTrue"
+                          }],
+                          "tooltip": "",
+                          "group": 1,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": true,
+                          "boxLabel": "<p><a target=\"_blank\"  href=\"\/de\/datenschutz\"><strong>Datenschutzerkl\u00e4rung<\/strong><\/a> gelesen und akzeptiert<\/p>\n"
+                      }, {
+                          "ctlType": "button",
+                          "key": "submit_comeback",
+                          "label": "Absenden",
+                          "required": false,
+                          "rules": false,
+                          "tooltip": "",
+                          "group": 1,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "action": "submit",
+                              "actionUrl": "http:\/\/192.168.10.6\/de\/k3\/k3\/come-back",
+                              "fields": ["date_care_start_real", "email", "email_confirm", "accepted_tos", "accepted_privacy"]
+                          }
+                      }, {
+                          "ctlType": "date",
+                          "key": "date_of_birth_child",
+                          "label": "Geburtsdatum Ihres Kindes",
+                          "required": true,
+                          "rules": [{
+                              "type": "beforeDate",
+                              "otherField": "date_care_start",
+                              "offset": "-364"
+                          }],
+                          "tooltip": "",
+                          "group": 2,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "minDate": "NONE",
+                              "additionMin": 0,
+                              "maxDate": "date_care_start",
+                              "additionMax": -365
+                          }
+                      }, {
+                          "ctlType": "button",
+                          "key": "button_under_1_year",
+                          "label": "?",
+                          "required": false,
+                          "rules": false,
+                          "tooltip": "",
+                          "group": 2,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "action": "nexthidden_2"
+                          }
+                      }, {
+                          "ctlType": "date",
+                          "key": "date_application_ja",
+                          "label": "Abgabedatum der Bedarfsanmeldung beim Jugendamt",
+                          "required": true,
+                          "rules": [{
+                              "type": "beforeDate",
+                              "otherField": "date_care_start",
+                              "offset": "-91"
+                          }, {
+                              "type": "afterDate",
+                              "otherField": "date_of_birth_child",
+                              "offset": "-1"
+                          }],
+                          "tooltip": "",
+                          "group": 4,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "minDate": "date_of_birth_child",
+                              "additionMin": 0,
+                              "maxDate": "date_care_start",
+                              "additionMax": -92
+                          }
+                      }, {
+                          "ctlType": "button",
+                          "key": "button_under_6_month",
+                          "label": "?",
+                          "required": false,
+                          "rules": false,
+                          "tooltip": "",
+                          "group": 4,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "action": "nexthidden_3"
+                          }
+                      }, {
+                          "ctlType": "radio",
+                          "key": "has_application_proof",
+                          "label": "Schriftlicher Nachweis vorhanden?",
+                          "required": false,
+                          "rules": [{
+                              "type": "requiredTrue"
+                          }],
+                          "tooltip": "",
+                          "group": 6,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": [{
+                              "key": 1,
+                              "value": "Ja"
+                          }, {
+                              "key": 0,
+                              "value": "Nein"
+                          }]
+                      }, {
+                          "ctlType": "showText",
+                          "key": "__depField_1",
+                          "label": false,
+                          "required": false,
+                          "rules": [],
+                          "tooltip": null,
+                          "group": 6,
+                          "conditions": [{
+                              "type": "equals",
+                              "value": "0",
+                              "field": "has_application_proof"
+                          }],
+                          "placeholder": false,
+                          "hideLabel": true,
+                          "content": "<div ><div class=\"row\"><div class=\"col-md-12\"><h2>Hinweis<\/h2>\n<p>Wenn Sie keinen Nachweis haben, k\u00f6nnen wir Sie leider aktuell nicht unterst\u00fctzen. <br \/>\nSie haben die M\u00f6glichkeit, unter <a class=\"link-external\" href=\"http:\/\/www.juniko.de\" target=\"_blank\">http:\/\/www.juniko.de<\/a> eine Anmeldung vorzunehmen.<\/p>\n<\/div><\/div><\/div>"
+                      }, {
+                          "ctlType": "button",
+                          "key": "button_no_proof",
+                          "label": "?",
+                          "required": false,
+                          "rules": false,
+                          "tooltip": "",
+                          "group": 6,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "action": "nexthidden_4"
+                          }
+                      }, {
+                          "ctlType": "textbox",
+                          "key": "firstname",
+                          "label": "Vorname",
+                          "required": true,
+                          "rules": false,
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false
+                      }, {
+                          "ctlType": "textbox",
+                          "key": "lastname",
+                          "label": "Nachname",
+                          "required": true,
+                          "rules": false,
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false
+                      }, {
+                          "ctlType": "textbox",
+                          "key": "email_register",
+                          "label": "E-Mail-Adresse",
+                          "required": true,
+                          "rules": [{
+                              "type": "email"
+                          }],
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false
+                      }, {
+                          "ctlType": "textbox",
+                          "key": "email_register_confirm",
+                          "label": "E-Mail-Adresse Best\u00e4tigung",
+                          "required": true,
+                          "rules": [{
+                              "type": "confirm",
+                              "otherField": "email_register"
+                          }],
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false
+                      }, {
+                          "ctlType": "textbox",
+                          "key": "password",
+                          "label": "Passwort",
+                          "required": true,
+                          "rules": [{
+                              "type": "minLength",
+                              "min": 8
+                          }],
+                          "tooltip": "<p>mindestens 7 Zeichen<\/p>\n",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false
+                      }, {
+                          "ctlType": "textbox",
+                          "key": "password_confirm",
+                          "label": "Passwort Best\u00e4tigung",
+                          "required": true,
+                          "rules": [{
+                              "type": "confirm",
+                              "otherField": "password"
+                          }],
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": 1,
+                          "hideLabel": false
+                      }, {
+                          "ctlType": "checkbox",
+                          "key": "accepted_tos_register_read",
+                          "label": "AGB akzeptiert",
+                          "required": true,
+                          "rules": [{
+                              "type": "requiredTrue"
+                          }],
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": true,
+                          "boxLabel": "<p><a target=\"_blank\"  href=\"\/de\/agb\"><strong>AGB<\/strong><\/a> gelesen<\/p>\n"
+                      }, {
+                          "ctlType": "checkbox",
+                          "key": "accepted_tos_register",
+                          "label": "AGB akzeptiert",
+                          "required": true,
+                          "rules": [{
+                              "type": "requiredTrue"
+                          }],
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": true,
+                          "boxLabel": "<p><a target=\"_blank\"  href=\"\/de\/agb\"><strong>AGB<\/strong><\/a> akzeptiert<\/p>\n"
+                      }, {
+                          "ctlType": "checkbox",
+                          "key": "accepted_privacy_register_read",
+                          "label": "Datenschutz akzeptiert",
+                          "required": true,
+                          "rules": [{
+                              "type": "requiredTrue"
+                          }],
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": true,
+                          "boxLabel": "<p><a target=\"_blank\"  href=\"\/de\/datenschutz\"><strong>Datenschutzerkl\u00e4rung<\/strong><\/a> gelesen<\/p>\n"
+                      }, {
+                          "ctlType": "checkbox",
+                          "key": "accepted_privacy_register",
+                          "label": "Datenschutz akzeptiert",
+                          "required": true,
+                          "rules": [{
+                              "type": "requiredTrue"
+                          }],
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": true,
+                          "boxLabel": "<p><a target=\"_blank\"  href=\"\/de\/datenschutz\"><strong>Datenschutzerkl\u00e4rung<\/strong><\/a> akzeptiert<\/p>\n"
+                      }, {
+                          "ctlType": "button",
+                          "key": "submit",
+                          "label": "Absenden",
+                          "required": false,
+                          "rules": false,
+                          "tooltip": "",
+                          "group": 8,
+                          "conditions": [],
+                          "placeholder": false,
+                          "hideLabel": false,
+                          "options": {
+                              "action": "submit",
+                              "actionUrl": "http:\/\/192.168.10.6\/de\/k3\/k3\/register",
+                              "fields": ["email_register", "email_confirm_register", "accepted_tos_register", "accepted_privacy_register", "firstname", "lastname", "password", "password_confirm", "date_care_start", "date_of_birth_child", "date_application_ja", "accepted_tos_register_read", "accepted_privacy_register_read"]
+                          }
+                      }],
+                      "groups": [{
+                          "elements": [{
+                              "n": "date_care_start",
+                              "t": "field"
+                          }, {
+                              "n": "button_over_14_weeks",
+                              "t": "field"
+                          }],
+                          "title": "Ab welchem Datum soll Ihr Kind betreut werden?",
+                          "hidden": false,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "    <div class=\"row \">\n    \n    <div class=\"  col-md-12\">\n        <div class=\"row\">\n            <div class=\" col-md-12\">\n                            <\/div>\n        <\/div>    \n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-12\">\n\n                                                    ###FIELD###                                            <\/div>    \n                            <\/div>\n            <\/div>\n        <\/div>\n\n<div >\n    <div class=\"row\"><div class=\"col-md-12\"> <p>Bitte beachten Sie, dass wir Sie nur unterst\u00fctzen k\u00f6nnen, wenn das gew\u00fcnschte Betreuungsbeginndatum bis zu 14 Wochen in der Zukunft liegt. Liegt Ihr urspr\u00fcnglich gew\u00fcnschter Betreuungsbeginn in der Vergangenheit, geben Sie als Betreuungsbeginn bitte das heutige Datum an. Wenn Sie ein sp\u00e4teres Betreuungsbeginndatum w\u00fcnschen, k\u00f6nnen wir Sie gerne erinnern, zu uns zur\u00fcckzukommen.<\/p>\n<\/div><\/div><\/div>\n\n###FIELD###"
+                      }, {
+                          "elements": [{
+                              "n": "date_care_start_real",
+                              "t": "field"
+                          }, {
+                              "n": "email",
+                              "t": "field"
+                          }, {
+                              "n": "email_confirm",
+                              "t": "field"
+                          }, {
+                              "n": "accepted_tos",
+                              "t": "field"
+                          }, {
+                              "n": "accepted_privacy",
+                              "t": "field"
+                          }, {
+                              "n": "submit_comeback",
+                              "t": "field"
+                          }],
+                          "title": "Betreuungsbeginn in mehr als 14 Wochen?",
+                          "hidden": 1,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "<div >\n    <div class=\"row\"><div class=\"col-md-12\"> <p>Wenn Sie einen Betreuungsbeginn in mehr als 14 Wochen in der Zukunft w\u00fcnschen, f\u00fcllen Sie bitte die unten stehenden Felder aus. Wir kommen auf Sie zu, sobald wir Sie unterst\u00fctzen k\u00f6nnen.<\/p>\n<\/div><\/div><\/div>\n\n<p class=\"spacing-block spacing-block--1\"><br><\/p>###FIELD###<p class=\"spacing-block spacing-block--1\"><br><\/p><div class=\"row\">\n    <div class=\"col-md-6\">\n        \n###FIELD###    <\/div>\n    <div class=\"col-md-6\">\n        \n###FIELD###    <\/div>\n<\/div>    <div class=\"row \">\n    \n    <div class=\"  col-md-12\">\n        <div class=\"row\">\n            <div class=\" col-md-12\">\n                            <\/div>\n        <\/div>    \n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-2\">\n\n                                                                                                <\/div>    \n                       \n                    \n                    <div class=\" col-md-8\">\n\n                                                    ###FIELD######FIELD###                                            <\/div>    \n                       \n                    \n                    <div class=\" col-md-2\">\n\n                                                                                                <\/div>    \n                            <\/div>\n            <\/div>\n        <\/div>\n\n###FIELD###"
+                      }, {
+                          "elements": [{
+                              "n": "date_of_birth_child",
+                              "t": "field"
+                          }, {
+                              "n": "button_under_1_year",
+                              "t": "field"
+                          }],
+                          "title": "Wann ist Ihr Kind geboren?",
+                          "hidden": false,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "    <div class=\"row \">\n    \n    <div class=\"  col-md-12\">\n        <div class=\"row\">\n            <div class=\" col-md-12\">\n                            <\/div>\n        <\/div>    \n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-10\">\n\n                                                    ###FIELD###                                            <\/div>    \n                       \n                    \n                    <div class=\" col-md-2\">\n\n                                                    ###FIELD###                                            <\/div>    \n                            <\/div>\n            <\/div>\n        <\/div>\n\n"
+                      }, {
+                          "title": "Kind unter einem Jahr bei Betreuungsbeginn",
+                          "hidden": 1,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "<div >\n    <div class=\"row\"><div class=\"col-md-12\"> <p>Ist Ihr Kind zum gew\u00fcnschten Betreuungsbeginn j\u00fcnger als ein Jahr, k\u00f6nnen wir Sie aktuell leider noch nicht unterst\u00fctzen. Sollten Sie das gew\u00fcnschte Betreuungsbeginndatum \u00e4ndern wollen, k\u00f6nnen Sie dies selbstverst\u00e4ndlich tun.<\/p>\n<\/div><\/div><\/div>\n\n"
+                      }, {
+                          "elements": [{
+                              "n": "date_application_ja",
+                              "t": "field"
+                          }, {
+                              "n": "button_under_6_month",
+                              "t": "field"
+                          }],
+                          "title": "Wann haben Sie den Betreuungsbedarf beim Jugendamt angemeldet?",
+                          "hidden": false,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "    <div class=\"row \">\n    \n    <div class=\"  col-md-12\">\n        <div class=\"row\">\n            <div class=\" col-md-12\">\n                            <\/div>\n        <\/div>    \n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-10\">\n\n                                                    ###FIELD###                                            <\/div>    \n                       \n                    \n                    <div class=\" col-md-2\">\n\n                                                    ###FIELD###                                            <\/div>    \n                            <\/div>\n            <\/div>\n        <\/div>\n\n"
+                      }, {
+                          "title": "Was ist eine Anmeldung?",
+                          "hidden": 1,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "<div >\n    <div class=\"row\"><div class=\"col-md-12\"> <p>Um eine Leistung vom Staat zu bekommen (z. B. einen Kitaplatz) muss man einen Antrag stellen. Die Anwaltskanzlei muss im Anschluss pr\u00fcfen, ob Sie einen Antrag gestellt haben, und wann Sie diesen gestellt haben.<\/p>\n<\/div><\/div><\/div>\n\n"
+                      }, {
+                          "elements": [{
+                              "n": "has_application_proof",
+                              "t": "field"
+                          }, {
+                              "n": "__depField_1",
+                              "t": "field"
+                          }, {
+                              "n": "button_no_proof",
+                              "t": "field"
+                          }],
+                          "title": "Haben Sie einen schriftlichen Nachweis \u00fcber die Anmeldung?",
+                          "hidden": false,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "    <div class=\"row \">\n    \n    <div class=\"  col-md-12\">\n        <div class=\"row\">\n            <div class=\" col-md-12\">\n                            <\/div>\n        <\/div>    \n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-10\">\n\n                                                    ###FIELD######FIELD###                                            <\/div>    \n                       \n                    \n                    <div class=\" col-md-2\">\n\n                                                    ###FIELD###                                            <\/div>    \n                            <\/div>\n            <\/div>\n        <\/div>\n\n"
+                      }, {
+                          "title": "Wozu ben\u00f6tigt es eine schriftliche Anmeldung?",
+                          "hidden": 1,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "<div >\n    <div class=\"row\"><div class=\"col-md-12\"> <p>Sie haben angegeben, dass Sie einen Kitaplatz f\u00fcr Ihr Kind angemeldet haben. K\u00f6nnen Sie dies schriftlich belegen (z. B. Kitagutschein, Screenshot aus Online-Portal, Referenznummer, etc.)?<\/p>\n<\/div><\/div><\/div>\n\n"
+                      }, {
+                          "elements": [{
+                              "n": "firstname",
+                              "t": "field"
+                          }, {
+                              "n": "lastname",
+                              "t": "field"
+                          }, {
+                              "n": "email_register",
+                              "t": "field"
+                          }, {
+                              "n": "email_register_confirm",
+                              "t": "field"
+                          }, {
+                              "n": "password",
+                              "t": "field"
+                          }, {
+                              "n": "password_confirm",
+                              "t": "field"
+                          }, {
+                              "n": "accepted_tos_register_read",
+                              "t": "field"
+                          }, {
+                              "n": "accepted_tos_register",
+                              "t": "field"
+                          }, {
+                              "n": "accepted_privacy_register_read",
+                              "t": "field"
+                          }, {
+                              "n": "accepted_privacy_register",
+                              "t": "field"
+                          }, {
+                              "n": "submit",
+                              "t": "field"
+                          }],
+                          "title": "Herzlichen Gl\u00fcckwunsch, wir k\u00f6nnen Sie unterst\u00fctzen! Jetzt registrieren.",
+                          "hidden": false,
+                          "hasDataReview": false,
+                          "hideable": true,
+                          "text": "<p class=\"spacing-block spacing-block--1\"><br><\/p>    <div class=\"row \">\n    \n    <div class=\"  col-md-12\">\n        <div class=\"row\">\n            <div class=\" col-md-12\">\n                            <\/div>\n        <\/div>    \n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-6\">\n\n                                                    \n###FIELD###                                            <\/div>    \n                       \n                    \n                    <div class=\" col-md-6\">\n\n                                                    \n###FIELD###                                            <\/div>    \n                            <\/div>\n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-6\">\n\n                                                    \n###FIELD###                                            <\/div>    \n                       \n                    \n                    <div class=\" col-md-6\">\n\n                                                    \n###FIELD###                                            <\/div>    \n                            <\/div>\n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-6\">\n\n                                                    \n###FIELD###                                            <\/div>    \n                       \n                    \n                    <div class=\" col-md-6\">\n\n                                                    \n###FIELD###                                            <\/div>    \n                            <\/div>\n            <\/div>\n        <\/div>\n\n    <div class=\"row \">\n    \n    <div class=\"  col-md-12\">\n        <div class=\"row\">\n            <div class=\" col-md-12\">\n                            <\/div>\n        <\/div>    \n                    <div class=\"row \">\n                       \n                    \n                    <div class=\" col-md-2\">\n\n                                                                                                <\/div>    \n                       \n                    \n                    <div class=\" col-md-8\">\n\n                                                    ###FIELD######FIELD######FIELD######FIELD###                                            <\/div>    \n                       \n                    \n                    <div class=\" col-md-2\">\n\n                                                                                                <\/div>    \n                            <\/div>\n            <\/div>\n        <\/div>\n\n###FIELD###<div  class=\"pull-right\">\n    <div class=\"row\"><div class=\"col-md-12\"> <p>* Pflichtfeld<\/p>\n<\/div><\/div><\/div>\n\n"
+                      }],
+                      "branches": []
+                  };
+                                  if (window.formPayload === undefined) {
+                                      window.formPayload = {
+                                          forms: [temp]
+                                      };
+                                  } else {
+                                      window.formPayload.forms.push(temp);
+                                  }
+                              </script>
+                              <my-app>
+                                <div class="k3-center k3-load-form">
+                                    <p>Lade Formular</p>
+                                    <i class="fa fa-spinner fa-spin k3-load-form"></i>
+                                </div>
+                            </my-app>
+                           </div>
+                       </div>
+                   </div>
+                 </div>
+               </div>
+
+</body>
+</html>

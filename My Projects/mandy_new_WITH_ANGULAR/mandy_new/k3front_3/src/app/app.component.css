@@ -1,0 +1,24 @@
+.container{
+  padding: 1.5rem;
+}
+
+.row{
+  marign-bottom: 1.5rem;
+}
+
+
+form{
+  text-align: center;
+}
+
+.btn{
+  background-color: green;
+  border-color: green;
+  margin-left: 2rem;
+}
+
+.form-control:focus{
+  background-color: green;
+  border-color: green;
+
+}

@@ -1,0 +1,28 @@
+.contact{
+    background-color: #947CB0;
+    height: 100vh;
+}
+.contact .form-control{
+    border: 1px solid #fff;
+    border-radius: 0%;
+    color:white;
+}
+/*.email, .lname, .web, .fname{
+    height: 45px;
+}*/
+.contact button{
+    margin-top: 20px;
+    font-size: 15px;
+    color:white;
+    background: transparent;
+    border:1px solid #ffffff;
+    padding: 8px 23px;
+    letter-spacing: 2px;
+    transition: all .5s;
+}
+.contact button:hover{
+    color:white;
+    border:1px solid #3B434A;
+    background-color:#191D20; 
+}
+

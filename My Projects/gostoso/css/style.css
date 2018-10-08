@@ -1,0 +1,460 @@
+/*
+Author: RORONOA SAZZED
+Email: mysticyagami7@gmail.com
+URL: http://roronoasazzed.com
+
+/* media query for responsiveness
+@media (max-width: 767px) {}
+@media (min-width: 768px) {}
+@media (min-width: 1200px) {}
+*/
+
+/*        font-family: 'Playfair Display', serif;
+font-family: 'Alegreya', serif;
+font-family: 'Calligraffitti', cursive;*/
+
+.logoTop{
+    font-family: 'Calligraffitti', cursive;
+    font-size: 30px;
+}
+
+.headerDiv{
+    background-image: url(../images/divOneBackground-min.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 880px;
+}
+
+.mainHeader{
+    margin-top: 200px;
+    font-size: 120px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+.pWhite{
+    font-size: 20px;
+    color: whitesmoke;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+}
+
+.btnMenu{
+    margin-top: 80px;
+    border-radius: 0%;
+    background-color: #6f6b63;
+    padding: 10px 40px;
+    border: 1px dashed whitesmoke;
+    opacity: .7;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: 'Alegreya', serif;
+}
+
+.btnMenu:hover{
+    margin-top: 80px;
+    border-radius: 0%;
+    background-color: #68645B;
+    padding: 10px 40px;
+    border: 1px dashed whitesmoke;
+    opacity: .7;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: 'Alegreya', serif;
+}
+
+/* artCakeDiv starts */
+
+.borderBottomPic{
+    width: 100%;
+    margin-top: -70px;
+}
+
+.artCakeDiv{
+    background-image: url(../images/divTwoBackground-min.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 720px;
+}
+
+.smallHeader{
+    font-size: 40px;
+    color: #56534c;
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+.subHeader{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -30px;
+    color: #a47d5e;
+    font-family: 'Alegreya', serif;
+}
+
+.pBlack{
+    letter-spacing: 1px;
+}
+
+.cookHeader{
+    font-weight: bold;
+    font-family: 'Alegreya', serif;
+    letter-spacing: 2px;
+}
+
+.cookName{
+    color: #56534c;
+    font-size: 25px;
+    font-family: 'Alegreya', serif;
+    border-top: 1px solid #56534c;
+    border-bottom: 1px solid #56534c;
+
+}
+
+.quote{
+    font-family: 'Calligraffitti', cursive;
+    font-size: 25px;
+    color: #a47d5e;
+}
+.commaL{
+    text-align: left !important;
+    color: #a47d5e;
+}
+.commaR{
+    text-align: right !important;
+    color: #a47d5e;
+}
+.positioning{
+    position: relative;
+}
+.cOfFour{
+    position: absolute;
+    top: 0;
+    left: 0;
+    top: 150px;
+    left: 200px;
+}
+.centerText{
+    font-size: 35px;
+    font-family: 'Alegreya', serif;
+    color: #a47d5e;
+    position: absolute;
+    top: 230px;
+    left: 265px;
+}
+
+/* panCakeDiv starts */
+
+.panCakeDiv{
+    background-image: url(../images/divThreeBackground-min.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 760px;
+}
+.contentPanCake{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+.tP{
+    text-align: left !important;
+    position: absolute;
+    top: 240px;
+    left: -650px
+}
+.sF{
+    text-align: left !important;
+    position: absolute;
+    top: 345px;
+    left: -650px
+}
+.digit{
+    font-size: 60px;
+}
+.positioningTow{
+    position: relative;
+}
+.circleImages{
+    position: absolute;
+    top: 510px;
+    left: -710px;
+}
+.rightTopImage{
+    position: absolute;
+    top: 40px;
+    left: -300px;
+}
+.blackTexts{
+    position: absolute;
+    top: 385px;
+    left: -650px;
+}
+.rInFourty{
+    position: absolute;
+    top: 115px;
+    left: -190px;
+    text-align: center;
+}
+
+/* breakFastDiv starts */
+
+.breakFastDiv{
+    background-image: url(../images/divFourBackground-min.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 740px;
+}
+
+.contentBreakfast{
+    padding-top: 75px;
+}
+
+.smallHeaderBig{
+    font-size: 50px;
+    color: whitesmoke;
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+.cookHeaderW{
+    color: white;
+    font-weight: bold;
+    font-family: 'Alegreya', serif;
+    letter-spacing: 2px;
+}
+
+.pGrey{
+    letter-spacing: 1px;
+    color: lightgrey;
+}
+.money{
+    font-size: 50px;
+    color: #b6a482;
+    font-family: 'Alegreya', serif;
+}
+
+.bbL{
+    color: black;
+    font-family: 'Alegreya', serif;
+    position: absolute;
+    top: 90px;
+    left: 90px;
+    font-weight: bold;
+}
+
+.bbR{
+    color: black;
+    font-family: 'Alegreya', serif;
+    position: absolute;
+    top: 90px;
+    left: 350px;
+    font-weight: bold;
+}
+.borderMenu{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+}
+.menuTextT{
+    position: absolute;
+    top: 180px;
+    left: 80px;
+}
+.menuTextB{
+    position: absolute;
+    top: 350px;
+    left: 70px;
+}
+.flower{
+    position: absolute;
+    top: 350px;
+    left: 300px;
+    width: 60%;
+}
+.btnRead{
+    position: absolute;
+    top: 440px;
+    left: 180px;
+    margin-top: 80px;
+    border-radius: 0%;
+    background-color: transparent;
+    padding: 10px 40px;
+    border: 1px solid black;
+    opacity: .7;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: 'Alegreya', serif;
+}
+
+.btnRead:hover{
+    position: absolute;
+    top: 440px;
+    left: 180px;
+    margin-top: 80px;
+    border-radius: 0%;
+    background-color: #cfcdc3;
+    padding: 10px 40px;
+    border: 1px solid black;
+    opacity: .6;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: 'Alegreya', serif;
+}
+
+/* sandwichDiv starts */
+
+.sandwichDiv{
+    background-image: url(../images/divFiveBackground-min.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 920px;
+}
+
+.marginSandwich{
+    margin-top: -55px;
+}
+
+.cookHeaderBr{
+    font-weight: bold;
+    font-family: 'Alegreya', serif;
+    letter-spacing: 2px;
+    color: #a47d5e;
+}
+
+.btnFullRecipe{
+    position: absolute;
+    top: 450px;
+    left: -60px;
+    margin-top: 80px;
+    border-radius: 0%;
+    background-color: white;
+    padding: 10px 40px;
+    border: 1px dashed #a47d5e;
+    opacity: .7;
+    color: #a47d5e;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: 'Alegreya', serif;
+}
+.btnFullRecipe:hover{
+    position: absolute;
+    top: 450px;
+    left: -60px;
+    margin-top: 80px;
+    border-radius: 0%;
+    background-color: whitesmoke;
+    padding: 10px 40px;
+    border: 1px dashed #a47d5e;
+    opacity: .7;
+    color: #a47d5e;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: 'Alegreya', serif;
+}
+
+.digitB{
+    font-size: 45px;
+    color: #56534c;
+}
+.marginSandwichPic{
+    margin-top: 100px;
+}
+
+.prep{
+    position: absolute;
+    top: 40px;
+    left: 735px;
+}
+.cook{
+    position: absolute;
+    top: 230px;
+    left: 735px;
+}
+.ready{
+    position: absolute;
+    top: 440px;
+    left: 715px;
+}
+.one{
+    position: absolute;
+    top: -30px;
+    left: 645px;
+    opacity: .5;
+}
+.two{
+    position: absolute;
+    top: 176px;
+    left: 645px;
+    opacity: .5;
+}
+.three{
+    position: absolute;
+    top: 360px;
+    left: 606px;
+}
+.contentFinal{
+    padding-bottom: 75px;
+}
+
+/* bottom nav starts */
+
+.bottomNavDiv{
+    height: 120px;
+    background-color: #F3F1E9;
+}
+.contentBottomNav{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.logoBottom{
+    font-family: 'Calligraffitti', cursive;
+    font-size: 40px;
+    color: #A47D5E;
+}
+.bottomNav{
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    border-bottom: 1px solid #56534c;
+    border-top: 1px solid #56534c;
+    padding: 15px 10px 15px 10px;
+}
+/* footer div starts */
+
+.lastDiv{
+    min-height: 70px;
+    background-color: #e2dfd1
+;
+}
+.contentLastDiv{
+    padding: 25px 0 25px 0;
+}
+
+.ftgl{
+    color: #938e78;
+}
+.ftgl:hover{
+    color: #7a7665;
+}
+
+.designedBy{
+    color: #938e78;
+}
+.myName{
+    color: #7a7665;
+}

@@ -1,0 +1,164 @@
+<div [formGroup]="form" [hidden]="datafield.currentlyDisabled && datafield.controlType !== 'file'" class="form-group"
+    [ngClass]="{ 'has-error has-feedback' : !isValid && isTouched }">
+  <label [attr.for]="datafield.key"
+         [attr.disabled]="formState !== 0 ? true : null"
+         [hidden]="nolabel||datafield.controlType=='button' || datafield.hideLabel"
+          for="datafield.key">{{daLabel}}{{datafield.required || datafield.showRequired ? " *" :""}} <i *ngIf="datafield.tooltip" (click)="toggleInfoPressed()" class="fa fa-info-circle" aria-hidden="true" style="cursor: help;"></i></label>
+
+
+  <div [ngSwitch]="datafield.controlType" >
+
+    <timepicker *ngSwitchCase="'time'"
+                [formControl]="datafield.viewControl"
+                [id]="datafield.key+'-'+ 'time'"
+                [showMeridian]="false"
+              [disabled]="datafield.currentlyDisabled || datafield.generallyDisabled"
+                [minuteStep]="5"
+                [mousewheel]="true"
+                [arrowkeys]="true"
+                >
+    </timepicker>
+
+    <input *ngSwitchCase="'time'" type="hidden" [formControlName]="datafield.key" [id]="datafield.key">
+
+    <input *ngSwitchCase="datafield.controlType === 'textbox' && datafield.type !== 'textarea' ? 'textbox' : '' " [formControlName]="datafield.key" class="form-control {{datafield.class}}"
+            [id]="datafield.key" [type]="datafield.type"
+            [attr.disabled]="formState !== 0 ? true : null"
+            [attr.placeholder]="datafield.placeholder ? daLabel + ( datafield.required || datafield.showRequired ? ' *' : '') : null"
+            >
+
+    <textarea *ngSwitchCase="datafield.controlType === 'textbox' && datafield.type === 'textarea' ? 'textbox' : '' " [formControlName]="datafield.key" class="form-control {{datafield.class}}"
+            [id]="datafield.key"
+            style="width:100%;height:150px;resize:vertical"
+            [attr.disabled]="formState !== 0 ? true : null"
+            [attr.placeholder]="datafield.placeholder ? daLabel + ( datafield.required || datafield.showRequired ? ' *' : '') : null">
+             {{value}}
+    </textarea>
+
+    <select [id]="datafield.key"
+      [attr.disabled]="formState !== 0 ? true : null"
+      *ngSwitchCase="'dropdown'" [formControlName]="datafield.key" class="form-control">
+      <option *ngFor="let opt of datafield.options" [value]="opt.key" [hidden]="! evaluateOptionCondition(opt.condition)">{{opt.value}}</option>
+    </select>
+
+
+    <ng-container *ngSwitchCase='"radio"'>
+      <!-- <p>Dies ist ein RADIO-BUTTIOn CONTAINER</p>
+      <p>Status: {{form.controls[datafield.key].value}}</p> -->
+      <div class="form-group {{ datafield.controlType }}">
+          <label *ngFor="let option of datafield.options;let i = index" class="{{datafield.controlType}}-inline"
+          for="{{datafield.key +'-'+ i}}"
+          [attr.disabled]="formState !== 0"
+          onloadeddata=""
+          (click)="radioButtonClick($event,i)"
+          >
+                <input [formControlName]="datafield.key"
+                      [attr.disabled]="formState !== 0 ? true : null"
+                      name="{{datafield.key}}"
+                      [id]='datafield.key +"-"+ i'
+                      [value]="option.key"
+                      (click)="radioButtonClick($event, i)"
+                      type="{{ datafield.controlType}}">
+
+                <span class="cr">
+                  <i *ngIf="datafield.controlType=='radio'" class="cr-icon fa fa-circle" (click)="radioButtonClick($event,i)" ></i>
+                </span>
+                {{option.value}}
+            </label>
+            <!-- <label class="radio-inline" for="radios-1">
+                <input name="radios" id="radios-1" value="2" type="radio"> weiblich
+            </label> -->
+        </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase='"checkbox"'>
+      <!-- <p>Dies ist ein RADIO-BUTTIOn CONTAINER</p>
+      <p>Status: {{form.controls[datafield.key].value}}</p> -->
+      <div class="form-group {{ datafield.controlType }}">
+          <label class="{{datafield.controlType}}-inline" for="{{datafield.key}}">
+                <input
+                    [attr.disabled]="formState !== 0 ? true : null"
+                      [id]="datafield.key"
+                      [name]="datafield.key"
+                      (change)="handleCheckBox($event)"
+                      type="{{ datafield.controlType}}">
+                <span class="cr">
+                  <i *ngIf="datafield.controlType=='checkbox'" class="cr-icon fa fa-check"></i>
+                </span>
+                <span [id]="datafield.key + '-html-box-label'" style="display:inline-block">
+                  {{datafield.boxLabel}}
+                </span>
+         </label>
+            <!-- <label class="radio-inline" for="radios-1">
+                <input name="radios" id="radios-1" value="2" type="radio"> weiblich
+            </label> -->
+        </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase='"file"'>
+      <div class="form-group">
+        <div class="input-group">
+          <label class="input-group-btn" for="{{datafield.key}}">
+            <span class="btn btn-primary" [attr.disabled]='this.datafield.value || formState > 0? "true" : null'>
+              {{datafield.value ? 'Datei liegt vor' : hasSpinner ? "lade Datei hoch" : "Durchsuchen…"}}
+              <i *ngIf="hasSpinner" class="fa fa-spinner fa-spin k3-file-upload"></i>
+              <input *ngIf="!datafield.value" [hidden]='datafield.value'
+                    [attr.disabled]='this.datafield.value || hasSpinner ? formState !== 0 ? true : null  :  null' type="file" style="display: none;" multiple="false"
+                    [id]="datafield.key"
+                    (change)="fileChange($event)"
+                    >
+            </span>
+          </label>
+          <input type="text" class="form-control" readonly="true"
+            [attr.disabled]="formState !== 0"
+            [attr.placeholder]="datafield.placeholder ? daLabel + ( datafield.required|| datafield.showRequired  ? ' *' : '') : null"
+            value={{fileNameAfterSubmit}}>
+          <input type="hidden" [formControlName]="datafield.key" [value]="datafield.value ? datafield.value : null">
+        </div>
+      </div>
+    </ng-container>
+
+    <div  [id]="datafield.key+'-showText'" [hidden]="this.datafield.controlType !== 'showText'">
+    </div>
+
+    <ng-container *ngSwitchCase="'button'">
+      <div [class.has-error]="datafield.isErrorResponse" [hidden]='datafield.options["action"] !=="submit"'>
+        <div [id]="datafield.key + '-response'" class="help-block">
+        </div>
+      </div>
+      <div class="mouse-over-wrapper"(mouseenter)="doInstantTouch()" style="display:inline-block;">
+        <button
+                [class.hidden]="datafield.alreadySentSuccessfully || this.formState !== 0 "
+                [attr.name]="datafield.key"
+                [id]="datafield.key"
+                class="btn btn-primary"
+                [attr.type]="datafield.type"
+                value='{{datafield.key}}'
+                [attr.disabled]="submitButtonDisabled()"
+                style='margin-top:0px; margin-bottom: 0px;'
+          (click)="doAnyaction(datafield.options.action)" >
+          {{daLabel}}
+            <i *ngIf="datafield.isOnSubmit" class="fa fa-spinner fa-spin k3-file-upload"></i>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.required">Pflichtfeld</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.plz">{{form.controls[datafield.key].errors.plz['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.confirm">{{form.controls[datafield.key].errors.confirm['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.email">{{form.controls[datafield.key].errors.email['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.requiredAny">{{form.controls[datafield.key].errors.requiredAny['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.requiredTrue">{{form.controls[datafield.key].errors.requiredTrue['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.maxlength">maximal {{form.controls[datafield.key].errors.maxlength.requiredLength}} Zeichen</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.minlength">mindestens {{form.controls[datafield.key].errors.minlength.requiredLength}} Zeichen</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.requiredFalse">{{form.controls[datafield.key].errors.requiredFalse['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.specialNumber">{{form.controls[datafield.key].errors.specialNumber['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.requiredAfterFieldOrDate">{{form.controls[datafield.key].errors.requiredAfterFieldOrDate['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.requiredBeforeFieldOrDate">{{form.controls[datafield.key].errors.requiredBeforeFieldOrDate['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.requiredOn">{{form.controls[datafield.key].errors.requiredOn['msg']}}</p>
+  <p class="help-block" *ngIf="!datafield.currentlyDisabled && !isValid && isTouched && form.controls[datafield.key].errors.pattern">Falsches Format</p>
+
+
+  <div class="help-block" [id]="datafield.key+'-tooltip'" [class.hidden]=" datafield.tooltip =='' || ! infoPressed"></div>
+</div>

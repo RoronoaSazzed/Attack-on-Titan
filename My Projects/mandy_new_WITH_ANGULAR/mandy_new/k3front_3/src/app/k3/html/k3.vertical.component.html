@@ -1,0 +1,64 @@
+<div id="ap{{formNumber}}" class="k3-vertical">
+  <div class="panel">
+      <div class="panel-box {{class}}" [class.muted]="formState === 2">
+          <div class="row flexcontainer">
+              <div>
+                  <span class="number">{{formNumber + 1}}</span>
+              </div>
+              <div class="middle">
+                  <h3><a [attr.href]="'#p'+formNumber"
+                    data-toggle="collapse"
+                    [attr.data-parent]="'ap'+formNumber"
+                    aria-expanded="true" class="">{{title}}</a></h3>
+                  <span class="meta">{{subTitle}}</span>
+              </div>
+              <div class="right text-right">
+                  <p [hidden]="formState == 2 || opened"><a [attr.href]="'#p'+formNumber" data-toggle="collapse" [attr.data-parent]="'ap'+formNumber" aria-expanded="true" class="" (click)="toggleOpened()">Mehr anzeigen</a></p>
+                  <p [hidden]="formState == 2 || ! opened"><a [attr.href]="'#p'+formNumber" data-toggle="collapse" [attr.data-parent]="'ap'+formNumber" aria-expanded="true" class="" (click)="toggleOpened()">Weniger anzeigen</a></p>
+                  <p *ngIf="activateError !== null">{{activateError}}</p>
+                  <i *ngIf="hasSpinner" class="fa fa-spinner fa-spin k3-file-upload"></i>
+                  <button (click)="activate()" [class.hidden]="formState < 2 || formState == 2 && activateError === null" class="btn btn-primary">Erneut probieren</button>
+              </div>
+          </div>
+
+          <div *ngIf="formState !== 2" class="panel-box-content row collapse" id="p{{formNumber}}"
+              [class.in]="formState !== 2"
+              aria-expanded="true"
+              style="">
+            <div id="{{accordionId}}">
+              <form (ngSubmit)="onSubmit()" onsubmit="return false;"
+                    [attr.disabled]="formState !== 0"
+                    [formGroup]="form" action={{this.formaction}} method="post" >
+          <!-- <div *ngFor="let group of showgroups; let i = index"
+               class="panel-box-content row collapse in"
+               [attr.aria-expanded]="current <=i ? true : false"
+               id="{{'p'+i}}"
+                > -->
+                  <app-formgroup
+                                class="panel"
+                                [formState]="formState"
+                                 [current]="current"
+                                 *ngFor="let group of showgroups; let i = index"
+                                 [form]="form"
+                                 [groupNumber]='i'
+                                 [noLabels]='false'
+                                 [accordionId]="'form-'+ formNumber"
+                                 [datafields]="keys2fields"
+                                 [style]="'panel'"
+                                 [formNumber]="formNumber"
+                                [datafieldgroup]="group"
+                                [parentRealGroups]="realGroups"
+                                [class.hidden]="group.hidden"
+                                [maxGroups] = "showgroups.length -1 "
+                                [openGroup] ="openGroups"
+                                (onAction)="onAction($event)">
+                </app-formgroup>
+              </form>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div *ngIf="payLoad" class="form-row payloadcontent">
+  <strong>Saved the following values</strong><br>{{payLoad}}
+</div>

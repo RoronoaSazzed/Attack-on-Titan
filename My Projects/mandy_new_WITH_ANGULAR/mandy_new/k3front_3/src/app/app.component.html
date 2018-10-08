@@ -1,0 +1,7 @@
+<div *ngFor="let form of forms; let i = index" >
+<k3vertical *ngIf="form.type=='v'" [allForms]="allForms" [formConfig]="form" [formNumber]="i" (stateChange)='onStateChange($event)'>
+</k3vertical>
+
+<k3horizontal  *ngIf="form.type=='h'" [allForms]="allForms" [formConfig]="form" [formNumber]="i">
+</k3horizontal>
+</div>

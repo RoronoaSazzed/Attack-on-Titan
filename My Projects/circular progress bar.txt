@@ -1,0 +1,24 @@
+        <style >
+            #doughnut,#doughnut2,#doughnut3{
+                margin-top: 10%;
+                position: absolute;
+            }
+            #skill1,#skill2,#skill3{
+                margin-top: 11%;
+                position: relative;
+            }
+            .my-grid{
+                color:white;
+            }
+        </style>
+
+<canvas id="doughnut" width="120" height="120"></canvas>
+                            <canvas id="skill1" width="120" height="120" class=""></canvas>
+
+<canvas id="doughnut2" width="120" height="120"></canvas>  
+                            <canvas id="skill2" width="120" height="120" class=""></canvas>
+
+<canvas id="doughnut3" width="120" height="120"></canvas>
+                            <canvas id="skill3" width="120" height="120" class=""></canvas>
+
+

@@ -1,0 +1,118 @@
+<div *ngIf="style === 'panel'" [hidden]="currentlyDisabled && hideable">
+      <a data-toggle="collapse"
+        class="form-section-header"
+        [attr.data-parent]="'#'+ accordionId"
+        [class.warning]="current > groupNumber &&  !isValid"
+        [class.success]="current >= groupNumber && isValid"
+        [class.collapsed]="openGroup[groupNumber] === 'undefined' || ! openGroup[groupNumber]"
+        (click)="sectionHeaderClick($event)"
+        href="{{'#s'+ formNumber + '-' + groupNumber}}">
+          <h2>{{finalLabel}}</h2>
+
+      </a>
+      <div class="form-section collapse" id="{{'s'+ formNumber + '-' + groupNumber}}"
+          [class.in]="openGroup[groupNumber] !== 'undefined' && openGroup[groupNumber]"
+          [attr.aria-expanded]="current >= groupNumber">
+
+        <ng-container *ngIf='datafieldgroup.hasDataReview'>
+          <div class="row">
+            <div class="col-md-12">
+                <h3>Überblick über Ihre Daten</h3>
+            </div>
+          </div>
+            <ng-container *ngFor="let group of parentRealGroups;let reviewIndex = index">
+              <div class="row">
+                <div class="col-md-8">
+              <table style="width:100%;">
+                <thead><th style="font-size :1.2em; border-bottom: 2px solid black">{{group.finalLabel}}</th><th style="font-size :1.2em; border-bottom: 2px solid black"></th></thead>
+                <tbody >
+                <ng-container *ngFor="let grpel of group.datafieldgroup.elements">
+                  <tr *ngIf="grpel.t === 'field' && ! datafields[grpel.n].currentlyDisabled
+                                                 &&  datafields[grpel.n].controlType !== 'button'
+                                                 &&  datafields[grpel.n].controlType !== 'value'
+                                                 &&  datafields[grpel.n].controlType !== 'showText'
+                                                 ">
+                    <td style="font-weight: bold;
+                                font-size: 1em;
+                                word-wrap: normal;
+                                width: 70%; min-width: 70%;
+                                border-bottom: 1px solid black;
+                                border-right: 1px solid black;
+                                padding: 2px;
+                                vertical-align: middle;
+                                "
+                                >{{datafields[grpel.n].getLabelForSummary()}}</td>
+                    <td style="
+                                font-size: 1em;
+                                width: 28%;
+                                min-width: 28%;
+                                border-bottom: 1px solid black;
+                                border-left: 1px solid black;
+                                vertical-align: middle;
+                                text-align: center;
+                                padding: 2px;">{{datafields[grpel.n].getValueForSummary(group.form.controls[grpel.n].value)}}</td>
+                  </tr>
+                </ng-container>
+                </tbody>
+            </table>
+          </div>
+        </div>
+            </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="levels.length > 1">
+          <div *ngIf="levels[0].length > 0"  >
+              <runtime-content (action)="doAction($event)" [template]="levels[0]" [form]="form" [useddatafields]="content" [datafields]="datafields" [noLabels]="noLabels"></runtime-content>
+          </div>
+          <div *ngFor="let level of levels; let j = index" class="panel" >
+            <ng-container *ngIf="j > 0 && levels[j] !== undefined && levels[j].length > 0 && !levelCurrentlyDisabled[j]">
+              <a href="#{{'s'+ formNumber + '-' + groupNumber + '-' + j}}"
+                [class.warning]="(!levelValid[j] && currentLevel >j) || (!levelValid[j] && current > groupNumber)"
+                data-toggle="collapse"
+                (click)="setCurrentLevel($event,j)"
+                class="form-level-header"
+                [class.collapsed]="currentLevel !== j"                
+                >
+<!-- [attr.data-parent]="'#s'+ formNumber + '-' + groupNumber" -->
+                <h3>{{levelHeadings[j] !== undefined ? levelHeadings[j] : ''}}</h3>
+              </a>
+              <div class="form-section collapse "
+                  [class.in]="currentLevel === j"
+
+                    id="{{'s'+ formNumber + '-' + groupNumber + '-' + j}}">
+                      <runtime-content  [formState]="formState" (action)="doAction($event)" [template]="levels[j]" [form]="form" [useddatafields]="content" [datafields]="datafields" [noLabels]="noLabels"></runtime-content>
+                    <!-- <button type="button" class="btn btn-default">Weiter</button> -->
+                </div>
+            </ng-container>
+          </div>
+        </ng-container>
+
+          <div *ngIf="levels.length <= 1"  >
+              <runtime-content [formState]="formState" (action)="doAction($event)" [template]="subtemplate" [form]="form" [useddatafields]="content" [datafields]="datafields" [noLabels]="noLabels"></runtime-content>
+          </div>
+          <div class="row">
+            <div class="col-md-4" >
+              <div class="mouse-over-wrapper"(mouseenter)="instantTouch()" style="display:inline-block;">
+          <button (click)="gotoNext()"
+                  [class.hidden]="!formState == 1 && groupNumber >= maxGroups && ( currentLevel >= maxLevels - 1 || maxLevels == 1)"
+                  [attr.disabled]="( formState === 0 && !isValid && currentLevel >= maxLevels -1) || ( formState === 0 && !levelValid[currentLevel] ) || null" type="button" class="btn btn-default">Weiter</button>
+                </div>
+                </div>
+                <div class="col-md-4 pull-right">
+                  <div class="pull-right">
+                  * Pflichtfeld
+                </div>
+                </div>
+          </div>
+      </div>
+</div>
+
+<div *ngIf="style === ''">
+  <runtime-content [formState]="formState" (action)="doAction($event)" [template]="subtemplate" [form]="form" [useddatafields]="content" [datafields]="datafields" [noLabels]="noLabels"></runtime-content>
+
+  <!-- <div *ngFor="let el of content;let i = index" [ngSwitch]="el.type" [hidden]="hidden">
+        <app-datafield *ngSwitchCase="'field'" [datafield]="datafields[el.content]" [form]="form" [nolabel]="nolabels" (onAction)="doAction($event)" ></app-datafield>
+        <div *ngSwitchCase="'plain'" class="content-{{i}}">
+        </div>
+  </div> -->
+</div>
