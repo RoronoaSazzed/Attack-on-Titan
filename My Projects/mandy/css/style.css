@@ -130,7 +130,13 @@ p {
 }
 
 /* Navbar css ends */
-
+.smallButton{
+    position: fixed;
+    z-index: 1000;
+    -webkit-transition: border-radius 1s;
+    transition: all 500ms;
+    border-radius: 20px !important;
+}
 .btnMandy {
     font-family: 'Roboto Condensed', sans-serif;
     background-color: #44639e;
@@ -148,6 +154,7 @@ p {
     -moz-transition: all .2s;
     -ms-transition: all .2s;
     -o-transition: all .2s;
+    width: 250px;
     -webkit-border-radius: 2px;
 }
 
@@ -205,9 +212,26 @@ p {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 450px;
+    min-height: 650px;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.divOne .container{
+    margin-top: 5%;
+}
+
+.videoResponsive {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.videoResponsive iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .cIcon {
